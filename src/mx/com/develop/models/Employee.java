@@ -18,7 +18,9 @@ public class Employee{
     public String email;
     public String phoneNumber;
     public double salary;
-    public String hireDate;
+    public java.util.Date hireDate;
+    public Department department;
+    public Job job;
     
     //Metodos, acciones, comportamientos
     //4 modificadores
@@ -34,6 +36,8 @@ public class Employee{
         System.out.println("Phone Number: "+phoneNumber);
         System.out.println("Salary: "+salary);
         System.out.println("Hire Date: "+hireDate);
+        System.out.println("Department: "+department);
+        System.out.println("Job: "+job);
         
     }
 }
