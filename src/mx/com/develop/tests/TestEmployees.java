@@ -6,15 +6,15 @@ public class TestEmployees {
         //Declaracion
         Employee e1; //v. referencia
         //Inicializacion
-        e1 = new Employee();
-        Employee e2 = new Employee();
+        e1 = new Employee("Damian", "Gonzalez",null);
+        Employee e2 = new Employee("Damian", "Gonzalez",null);
         Employee e3 = e2;
         e1 = e2;
-        e1.firstName = "Daniel";
+        e1.setFirstName("Daniel");
         System.out.println(e1);
         System.out.println(e2);
         System.out.println(e3);
-        System.out.println("First Name: "+e2.firstName);
+        System.out.println("First Name: "+e2.getFirstName());
         //System.out.println("Age: "+e1.age);
     }
 }

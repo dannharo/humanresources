@@ -1,4 +1,7 @@
 package mx.com.develop.models;
+
+import java.util.Date;
+
 /**
  * Clase que contiene el modelo de un empleado
  * para la empresa Develop del sistema de 
@@ -11,16 +14,22 @@ package mx.com.develop.models;
 public class Employee{
     //Atributos, campos, Variables de instacias
     // 4 modificadores
-    public int id;
-    public String firstName;
-    public String lastName;
-    public int age;
-    public String email;
-    public String phoneNumber;
-    public double salary;
-    public java.util.Date hireDate;
-    public Department department;
-    public Job job;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String email;
+    private String phoneNumber;
+    private double salary;
+    private java.util.Date hireDate;
+    private Department department;
+    private Job job;
+
+    public Employee(String firstName, String lastName, Date hireDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hireDate = hireDate;
+    }
     
     //Metodos, acciones, comportamientos
     //4 modificadores
@@ -39,5 +48,95 @@ public class Employee{
         System.out.println("Department: "+department);
         System.out.println("Job: "+job);
         
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 18 || age >65) {
+            System.out.println("Edad no valida");
+        } else {
+            this.age = age;
+        }
+        
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        if (email.contains("@ucol.mx") && !"@ucol.mx".equals(email)) {
+                this.email = email;            
+        } else {
+            this.email = "Not e-mail found";
+        }
+        
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public java.util.Date getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(java.util.Date hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
     }
 }
